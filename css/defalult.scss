@@ -1,0 +1,168 @@
+@charset "utf-8";
+/* 开始 */
+$fontSize:23;
+$baifen:100%;
+$center:0 auto;
+$Lefta:left;
+$ct:center;
+@function c($px){
+	@return $px/2/$fontSize+rem;
+};
+@mixin setPm($name,$val...){
+
+	$max:length($val);
+
+	$str:"";
+
+	@for $i from 1 through $max{
+		$value:nth($val,$i)/2/$fontSize;
+		$str:#{$str+$value}rem;
+		@if $i<$max{
+			$str:#{$str+" "};
+		}
+	}
+	#{$name}:$str;
+};
+/* 开始样式 */
+a{
+	color:#000 !important;
+	text-decoration:none !important ;
+}
+.header{
+	background: #009B72;
+    color: #FFF; 
+    .headera{
+    	min-height: 10px;
+    	height:28px;
+    	line-height:28px;
+    }
+  
+} 
+.nav-l{
+	height: 78px;
+	img{
+		width:119px;
+		display: inline-block;
+		line-height:78px;
+	}
+	.nav-ll{
+		height:78px;
+		.nav-x{
+			height: 78px;
+			line-height:78px;
+			color:#7b7b7b;
+			position:relative;
+		}
+	}
+}
+.showz{
+	margin-top:c(2);
+	padding:0;
+	.zhst{
+		padding:0;
+		img{
+			width:100%;
+		}
+	}
+}
+.footer-a{
+	height: 140px;
+	margin-top:c(30);
+	padding:0;
+	.phone{
+		font-size:c(12);
+		font-weight:bold;
+	}
+	.rexian{
+		font-size:c(8);
+	}
+	img{
+		width: 100%;
+	}
+}
+.footerinfo{
+	color:#7b7b7b;
+	height: 78px;
+	line-height:78px;
+	border-top:1px solid #ededed;
+	.foot-la{
+		width: 24px;
+		height: 25px;
+	}
+	.about span{
+		width: 30px;
+		height: 30px;
+	   display: inline-block;
+	}
+	
+}
+#navi-scroll{
+	 position: fixed;
+    right: 32px;
+    bottom: 32px;
+    width: 42px;
+    min-height: 74px;
+    z-index: 999;
+    .scroll-top-btn{
+    	height: 36px;
+
+    }
+}
+.nav-l .lb{
+	width: 22px;
+	height: 24px;
+	display:none;
+	position:absolute;
+	img{
+		width: 100%;
+		height: 100%;
+		position:absolute;
+	}
+}
+
+@media screen and (max-width: 820px) {
+   .lianxi{
+   	float:left !important;
+   	img{
+   		width: 120px;
+   		float:right;
+   	}
+
+   }
+   .about{
+   	text-align:left;
+   	float:left;
+   }
+   .rexian  {
+   	float:left;
+   }
+   .footerinfo{
+   	height:50px !important;
+   }
+	.footer-a{
+		height:100px;
+	}
+	.nav-m{
+		background-color:#F5D6D9;
+		height: 48px;
+		.nav-ll{
+		height: 48px;
+			.logoa{
+				margin:14px auto 0;
+				display:block;
+			}
+		}
+	}
+	.lb{
+		display: block !important;
+	}
+	.lb1{
+		right:0 ;
+		top:0 ;
+	}
+	.lb2{
+		left:0;
+		top:0;
+	}
+
+}
